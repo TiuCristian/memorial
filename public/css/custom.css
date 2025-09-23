@@ -171,17 +171,26 @@ html {
 }
 
 .wrapper-slider .parent-text {
-    position: relative;
+    position: absolute;
+    /* instead of relative */
+    bottom: 5rem;
+    /* adjust how high from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    /* keep centered horizontally */
     z-index: 2;
-    padding: 3rem 2rem;
+    width: 100%;
+    max-width: 920px;
+    padding: 2rem;
     color: #fff;
+    text-align: center;
 }
-
-.wrapper-slider .info-text {
+.wrapper-slider .parent-text .info-text {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
-    max-width: 920px;
+    align-items: center;
+    /* center button and text horizontally */
+    gap: 1rem;
 }
 
 .wrapper-slider h2 {

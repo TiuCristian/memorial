@@ -27,14 +27,14 @@
             <body>
                @yield('content')
             </body>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
                 <div class="container">
                     <a class="navbar-brand" href="{{ route('homepage') }}">Memorial</a>
                     <div>
                         <a class="btn btn-outline-primary" href="{{ route('memories.form') }}">Formular amintiri</a>
                     </div>
                 </div>
-            </nav>
+            </nav> --}}
         </div>
     </body>
 </html>

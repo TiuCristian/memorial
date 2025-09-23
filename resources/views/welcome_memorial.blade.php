@@ -11,9 +11,10 @@
           </picture>
           <div class="parent-text">
             <div class="info-text">
-              <h2>Tum dicere exorsus est curne interiret at vero.</h2>
-              <p>Torquem detraxit hosti et quidem rerum necessitatibus saepe eveniet, ut.</p>
+              <h2>În memoria Danei</h2>
+              <p>O pagină dedicată amintirii și poveștilor celor dragi.</p>
               <a href="{{ route('memories.form') }}">Adaugă o amintire</a>
+              <a href="{{ route('memories.index') }}">Vezi ce au spus altii</a>
             </div>
           </div>
         </div>
@@ -29,9 +30,10 @@
           </div>
           <div class="parent-text">
             <div class="info-text">
-              <h2>Tum dicere exorsus est curne interiret at vero.</h2>
-              <p>Torquem detraxit hosti et quidem rerum necessitatibus saepe eveniet, ut.</p>
+              <h2>În memoria Danei</h2>
+              <p>O pagină dedicată amintirii și poveștilor celor dragi.</p>
               <a href="{{ route('memories.form') }}">Adaugă o amintire</a>
+              <a href="{{ route('memories.index') }}">Vezi ce au spus altii</a>
             </div>
           </div>
         </div>
@@ -44,9 +46,10 @@
           </picture>
           <div class="parent-text">
             <div class="info-text">
-              <h2>Tum dicere exorsus est curne interiret at vero.</h2>
-              <p>Torquem detraxit hosti et quidem rerum necessitatibus saepe eveniet, ut.</p>
+               <h2>În memoria Danei</h2>
+              <p>O pagină dedicată amintirii și poveștilor celor dragi.</p>
               <a href="{{ route('memories.form') }}">Adaugă o amintire</a>
+              <a href="{{ route('memories.index') }}">Vezi ce au spus altii</a>
             </div>
           </div>
         </div>
@@ -60,9 +63,10 @@
           </video>
           <div class="parent-text">
             <div class="info-text">
-              <h2>Tum dicere exorsus est curne interiret at vero.</h2>
-              <p>Torquem detraxit hosti et quidem rerum necessitatibus saepe eveniet, ut.</p>
+               <h2>În memoria Danei</h2>
+              <p>O pagină dedicată amintirii și poveștilor celor dragi.</p>
               <a href="{{ route('memories.form') }}">Adaugă o amintire</a>
+              <a href="{{ route('memories.index') }}">Vezi ce au spus altii</a>
             </div>
           </div>
         </div>
@@ -76,11 +80,11 @@
 <div class="container py-5">
 
     {{-- Section with picture/slider --}}
-    <div class="text-center mb-5">
+    {{-- <div class="text-center mb-5">
         <h1 class="display-4">În memoria Danei</h1>
         <p class="lead">O pagină dedicată amintirii și poveștilor celor dragi.</p>
-    </div>
-
+    </div> --}}
+{{-- 
     <div id="memorialCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -99,7 +103,7 @@
         <button class="carousel-control-next" type="button" data-bs-target="#memorialCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
-    </div>
+    </div> --}}
 
     {{-- Button to go to form --}}
     <div class="text-center">
