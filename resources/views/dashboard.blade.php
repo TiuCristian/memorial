@@ -20,6 +20,15 @@
     .toggle-btn{display:inline-flex}
     .content{padding-top:.5rem}
   }
+  .panou-ttl {
+    font-size: 22px;
+  }
+    .list-group-item {
+      font-size:20px;
+  }
+  .list-group-item .btn {
+    font-size:17px;
+  }
 </style>
 
 <div class="admin-layout">
@@ -41,7 +50,7 @@
     <div class="topbar">
       <button class="toggle-btn" aria-label="Deschide meniul" onclick="toggleSidebar(true)">☰</button>
       <div>
-        <h1 class="fw-bold m-0">📊 Panou Administrare</h1>
+        <h1 class="panou-ttl fw-bold m-0">📊 Panou Administrare</h1>
         <small class="text-muted">Bun venit! Aici poți aproba, edita și gestiona amintirile.</small>
       </div>
     </div>

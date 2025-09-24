@@ -26,7 +26,7 @@
 }
 .admin-actions form{ display:inline; }
 .admin-actions .btn{
-  padding:.3rem .55rem; font-size:.85rem; border-radius:8px;
+  padding:.3rem .55rem; font-size:1.5rem; border-radius:8px;
 }
 .badge-soft{display:inline-block;background:rgba(49,130,206,.1);color:#3182ce;font-size:12px;padding:4px 10px;border-radius:20px;font-weight:600;margin-left:6px}
 .container-mem {width: 100%; margin: 0 auto; padding: 24px 16px;}
