@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <style>
   .admin-layout{display:flex;min-height:100vh;background:#f8fafc}
   .sidebar{width:260px;background:#0f172a;color:#fff;flex-shrink:0;display:flex;flex-direction:column;transition:transform .3s;min-height:100vh}
@@ -37,6 +38,13 @@
   <div class="backdrop" id="sidebarBackdrop" onclick="toggleSidebar(false)"></div>
 
 <div class="container py-4" style="max-width:760px;">
+<div class="topbar">
+      <button class="toggle-btn" aria-label="Deschide meniul" onclick="toggleSidebar(true)">☰</button>
+      <div>
+        <h1 class="panou-ttl fw-bold m-0">📊 Panou Administrare</h1>
+        <small class="text-muted">Bun venit! Aici poți aproba, edita și gestiona amintirile.</small>
+      </div>
+    </div>
   <h3 class="mb-3">Editează amintire</h3>
 
   <form method="POST" action="{{ route('admin.memories.update', $memory) }}" enctype="multipart/form-data" class="card p-4 shadow-sm">
@@ -98,4 +106,13 @@
     </div>
   </form>
 </div>
+
+<script>
+  function toggleSidebar(open){
+    const sb=document.getElementById('sidebar');
+    const bd=document.getElementById('sidebarBackdrop');
+    const willOpen=(open===true)?true:(open===false?false:!sb.classList.contains('open'));
+    sb.classList.toggle('open', willOpen); bd.classList.toggle('show', willOpen);
+  }
+  document.addEventListener('keydown', e => { if (e.key==='Escape') toggleSidebar(false); });</script>
 @endsection

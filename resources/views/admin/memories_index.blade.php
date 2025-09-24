@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <style>
   .admin-layout{display:flex;min-height:100vh;background:#f8fafc}
   .sidebar{width:260px;background:#0f172a;color:#fff;flex-shrink:0;display:flex;flex-direction:column;transition:transform .3s;min-height:100vh}
@@ -20,14 +21,55 @@
     .toggle-btn{display:inline-flex}
     .content{padding-top:.5rem}
   }
-/* Small, clean admin actions on top-right of each testimonial */
-.admin-actions{
-  display:flex; gap:8px; z-index:2;
+/* keep actions compact on all sizes */
+.admin-actions {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
 }
-.admin-actions form{ display:inline; }
 .admin-actions .btn{
-  padding:.3rem .55rem; font-size:1.5rem; border-radius:8px;
+  padding:.35rem .6rem;
+  font-size:.9rem;
+  border-radius:999px; /* pills */
 }
+
+/* mobile layout */
+@media (max-width: 560px){
+  .testimonial-header{
+    display:flex;
+    align-items:flex-start;
+    flex-wrap:wrap;             /* allow lines */
+    row-gap:.25rem;
+  }
+  .thc{ order:1; min-width:0; } /* avatar + meta first */
+  .toggle{ order:2; margin-left:auto; }
+
+  /* move actions under meta, full width */
+  .admin-actions{
+    order:3;
+    width:100%;
+    justify-content:flex-start;
+    margin-top:.5rem;
+    gap:.5rem;
+  }
+  .admin-actions .btn{
+    font-size:.9rem;
+    padding:.4rem .7rem;
+  }
+
+  /* optional: calm the header on tiny screens */
+  .summary{ display:none; }            /* hide the teaser line */
+  .avatar{ width:42px; height:42px; }  /* slightly smaller avatar */
+}
+
+/* ultra small phones */
+@media (max-width: 380px){
+  .admin-actions .btn{
+    flex:1 1 auto;         /* let buttons share the row */
+    text-align:center;
+  }
+}
+
 .badge-soft{display:inline-block;background:rgba(49,130,206,.1);color:#3182ce;font-size:12px;padding:4px 10px;border-radius:20px;font-weight:600;margin-left:6px}
 .container-mem {width: 100%; margin: 0 auto; padding: 24px 16px;}
 .testimonial{margin-bottom:16px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.05);position:relative;transition:transform .25s}
@@ -71,6 +113,13 @@
   <div class="backdrop" id="sidebarBackdrop" onclick="toggleSidebar(false)"></div>
 
 <div class="container-mem">
+<div class="topbar">
+      <button class="toggle-btn" aria-label="Deschide meniul" onclick="toggleSidebar(true)">☰</button>
+      <div>
+        <h1 class="panou-ttl fw-bold m-0">📊 Panou Administrare</h1>
+        <small class="text-muted">Bun venit! Aici poți aproba, edita și gestiona amintirile.</small>
+      </div>
+    </div>
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h3 class="mb-0">Moderare amintiri</h3>
     <a href="{{ route('memories.index') }}" class="btn btn-outline-secondary">Vezi pagina publică</a>
@@ -86,7 +135,7 @@
       $isVideo = $memory->media_mime && str_starts_with($memory->media_mime, 'video/');
       $mediaUrl = $memory->media_path ? asset('storage/'.$memory->media_path) : null;
       $initial = strtoupper(mb_substr($memory->name ?: 'Anonim', 0, 1));
-      $shortSummary = \Illuminate\Support\Str::limit($memory->message, 90);
+      $shortSummary = \Illuminate\Support\Str::limit($memory->message, 50);
       $dotClass = $memory->status === 'approved' ? 'status-approved' : ($memory->status === 'rejected' ? 'status-rejected' : 'status-pending');
     @endphp
 
@@ -179,5 +228,15 @@ document.addEventListener('DOMContentLoaded',()=> {
     });
   });
 });
+
+
+  function toggleSidebar(open){
+    const sb=document.getElementById('sidebar');
+    const bd=document.getElementById('sidebarBackdrop');
+    const willOpen=(open===true)?true:(open===false?false:!sb.classList.contains('open'));
+    sb.classList.toggle('open', willOpen); bd.classList.toggle('show', willOpen);
+  }
+  document.addEventListener('keydown', e => { if (e.key==='Escape') toggleSidebar(false); });
+
 </script>
 @endsection
