@@ -2,6 +2,24 @@
 
 @section('content')
 <style>
+  .admin-layout{display:flex;min-height:100vh;background:#f8fafc}
+  .sidebar{width:260px;background:#0f172a;color:#fff;flex-shrink:0;display:flex;flex-direction:column;transition:transform .3s;min-height:100vh}
+  .nav-link{font-size:20px}
+  .sidebar-header{display:flex;align-items:center;gap:.5rem;padding:1rem 1.25rem;font-weight:700;background:#111827;border-right:1px solid rgba(255,255,255,.05);font-size:25px}
+  .sidebar .nav-link,.sidebar button.nav-link{display:flex;align-items:center;gap:.6rem;padding:.65rem 1rem;color:#fff!important;text-decoration:none;width:100%;border:0;background:transparent;border-radius:.5rem;margin:.15rem .5rem}
+  .sidebar .nav-link:hover,.sidebar button.nav-link:hover{background:#1e293b}
+  .sidebar .nav-link.active{background:#334155}
+  .content{flex:1;padding:1rem}
+  .topbar{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+  .toggle-btn{display:none;border:0;background:#0f172a;color:#fff;border-radius:.5rem;padding:.5rem .75rem;font-size:1.1rem}
+  @media (max-width: 992px){
+    .sidebar{position:fixed;top:0;left:0;height:100vh;z-index:1050;transform:translateX(-100%)}
+    .sidebar.open{transform:translateX(0)}
+    .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:1040;display:none}
+    .backdrop.show{display:block}
+    .toggle-btn{display:inline-flex}
+    .content{padding-top:.5rem}
+  }
 /* Small, clean admin actions on top-right of each testimonial */
 .admin-actions{
   display:flex; gap:8px; z-index:2;
@@ -11,7 +29,7 @@
   padding:.3rem .55rem; font-size:.85rem; border-radius:8px;
 }
 .badge-soft{display:inline-block;background:rgba(49,130,206,.1);color:#3182ce;font-size:12px;padding:4px 10px;border-radius:20px;font-weight:600;margin-left:6px}
-.container-mem {max-width: 960px; margin: 0 auto; padding: 24px 16px;}
+.container-mem {width: 100%; margin: 0 auto; padding: 24px 16px;}
 .testimonial{margin-bottom:16px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.05);position:relative;transition:transform .25s}
 .testimonial:hover{transform:translateY(-2px)}
 .testimonial-header{padding:16px 18px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;position:relative}
@@ -37,6 +55,20 @@
 .status-approved{background:#16a34a}
 .status-rejected{background:#ef4444}
 </style>
+<div class="admin-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><span>⚙️</span><span>Panou Admin</span></div>
+    <nav class="mt-2">
+      <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">🏠 Dashboard</a>
+      <a href="{{ route('admin.memories.index') }}" class="nav-link {{ request()->routeIs('admin.memories.*') ? 'active' : '' }}">📖 Amintiri</a>
+      <form method="POST" action="{{ route('logout') }}" class="m-0">
+        @csrf
+        <button type="submit" class="nav-link">🚪 Delogare</button>
+      </form>
+    </nav>
+  </aside>
+
+  <div class="backdrop" id="sidebarBackdrop" onclick="toggleSidebar(false)"></div>
 
 <div class="container-mem">
   <div class="d-flex justify-content-between align-items-center mb-3">

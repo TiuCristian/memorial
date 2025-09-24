@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('body-class', 'bg-form')
 {{-- Page background + glass card --}}
 <div class="memorial-bg"></div>
 

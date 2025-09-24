@@ -1,6 +1,17 @@
 @extends('layouts.app')
 @section('body-class', 'no-scroll')
 @section('content')
+<style>
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 2rem;
+}
+p {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+}
+</style>
 <div class="wrapper-slider">
   <div class="swiper main-slider">
     <div class="swiper-wrapper">
