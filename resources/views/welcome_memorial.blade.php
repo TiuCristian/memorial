@@ -1,20 +1,23 @@
 @extends('layouts.app')
-
+@section('body-class', 'no-scroll')
 @section('content')
 <div class="wrapper-slider">
   <div class="swiper main-slider">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div class="item">
-          <picture>
-            <img src="https://images.unsplash.com/photo-1555229189-b73534307942?q=80&w=1170&auto=format&fit=crop" alt="image">
-          </picture>
+          <video autoplay loop muted playsinline poster="">
+              <source src="https://codeforgestack.com/memorial/uploads/h52PPf2Z.mp4" type="video/mp4">
+              Browserul tău nu suportă video.
+            </video>
           <div class="parent-text">
             <div class="info-text">
               <h2>În memoria Danei</h2>
               <p>O pagină dedicată amintirii și poveștilor celor dragi.</p>
-              <a href="{{ route('memories.form') }}">Adaugă o amintire</a>
-              <a href="{{ route('memories.index') }}">Vezi ce au spus altii</a>
+               <div class="cta-row">
+                <a href="{{ route('memories.form') }}">Adaugă o amintire</a>
+                <a href="{{ route('memories.index') }}">Vezi ce au spus alții</a>
+              </div>
             </div>
           </div>
         </div>
@@ -23,8 +26,8 @@
       <div class="swiper-slide">
         <div class="item">
           <div class="video">
-            <video autoplay loop muted playsinline poster="">
-              <source src="https://videos.pexels.com/video-files/4354243/4354243-uhd_2560_1440_25fps.mp4" type="video/mp4">
+           <video autoplay loop muted playsinline poster="">
+              <source src="https://codeforgestack.com/memorial/uploads/KNaJnnbL.mp4" type="video/mp4">
               Browserul tău nu suportă video.
             </video>
           </div>
@@ -32,24 +35,10 @@
             <div class="info-text">
               <h2>În memoria Danei</h2>
               <p>O pagină dedicată amintirii și poveștilor celor dragi.</p>
-              <a href="{{ route('memories.form') }}">Adaugă o amintire</a>
-              <a href="{{ route('memories.index') }}">Vezi ce au spus altii</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <div class="item">
-          <picture>
-            <img src="https://images.unsplash.com/photo-1541188903310-8e078edbcaf6?q=80&w=1170&auto=format&fit=crop" alt="image">
-          </picture>
-          <div class="parent-text">
-            <div class="info-text">
-               <h2>În memoria Danei</h2>
-              <p>O pagină dedicată amintirii și poveștilor celor dragi.</p>
-              <a href="{{ route('memories.form') }}">Adaugă o amintire</a>
-              <a href="{{ route('memories.index') }}">Vezi ce au spus altii</a>
+              <div class="cta-row">
+                <a href="{{ route('memories.form') }}">Adaugă o amintire</a>
+                <a href="{{ route('memories.index') }}">Vezi ce au spus alții</a>
+              </div>
             </div>
           </div>
         </div>
@@ -58,15 +47,36 @@
       <div class="swiper-slide">
         <div class="item">
           <video autoplay loop muted playsinline poster="">
-            <source src="https://videos.pexels.com/video-files/5495781/5495781-uhd_2560_1080_30fps.mp4" type="video/mp4">
-            Browserul tău nu suportă video.
-          </video>
+              <source src="https://codeforgestack.com/memorial/uploads/h52PPf2Z.mp4" type="video/mp4">
+              Browserul tău nu suportă video.
+            </video>
           <div class="parent-text">
             <div class="info-text">
                <h2>În memoria Danei</h2>
               <p>O pagină dedicată amintirii și poveștilor celor dragi.</p>
-              <a href="{{ route('memories.form') }}">Adaugă o amintire</a>
-              <a href="{{ route('memories.index') }}">Vezi ce au spus altii</a>
+              <div class="cta-row">
+                <a href="{{ route('memories.form') }}">Adaugă o amintire</a>
+                <a href="{{ route('memories.index') }}">Vezi ce au spus alții</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="item">
+           <video autoplay loop muted playsinline poster="">
+              <source src="https://codeforgestack.com/memorial/uploads/KNaJnnbL.mp4" type="video/mp4">
+              Browserul tău nu suportă video.
+            </video>
+          <div class="parent-text">
+            <div class="info-text">
+               <h2>În memoria Danei</h2>
+              <p>O pagină dedicată amintirii și poveștilor celor dragi.</p>
+              <div class="cta-row">
+                <a href="{{ route('memories.form') }}">Adaugă o amintire</a>
+                <a href="{{ route('memories.index') }}">Vezi ce au spus alții</a>
+              </div>
             </div>
           </div>
         </div>
@@ -77,7 +87,7 @@
   </div>
 </div>
 
-<div class="container py-5">
+{{-- <div class="container py-5"> --}}
 
     {{-- Section with picture/slider --}}
     {{-- <div class="text-center mb-5">
@@ -106,12 +116,12 @@
     </div> --}}
 
     {{-- Button to go to form --}}
-    <div class="text-center">
+    {{-- <div class="text-center">
         <a href="{{ route('memories.form') }}" class="btn btn-primary btn-lg">
             Adaugă o amintire
         </a>
-    </div>
-</div>
+    </div> --}}
+{{-- </div> --}}
 @endsection
 
 

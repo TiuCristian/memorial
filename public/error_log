@@ -1,0 +1,14 @@
+[23-Sep-2025 17:06:33 Europe/Bucharest] PHP Fatal error:  Uncaught RuntimeException: Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.0.30. in /home/r130704code/public_html/memorial/vendor/composer/platform_check.php:22
+Stack trace:
+#0 /home/r130704code/public_html/memorial/vendor/composer/autoload_real.php(25): require()
+#1 /home/r130704code/public_html/memorial/vendor/autoload.php(22): ComposerAutoloaderInitc514d8f7b9fc5970bdd94287905ef584::getLoader()
+#2 /home/r130704code/public_html/memorial/public/index.php(14): require('/home/r130704co...')
+#3 {main}
+  thrown in /home/r130704code/public_html/memorial/vendor/composer/platform_check.php on line 22
+[23-Sep-2025 17:07:25 Europe/Bucharest] PHP Fatal error:  Uncaught RuntimeException: Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.0.30. in /home/r130704code/public_html/memorial/vendor/composer/platform_check.php:22
+Stack trace:
+#0 /home/r130704code/public_html/memorial/vendor/composer/autoload_real.php(25): require()
+#1 /home/r130704code/public_html/memorial/vendor/autoload.php(22): ComposerAutoloaderInitc514d8f7b9fc5970bdd94287905ef584::getLoader()
+#2 /home/r130704code/public_html/memorial/public/index.php(14): require('/home/r130704co...')
+#3 {main}
+  thrown in /home/r130704code/public_html/memorial/vendor/composer/platform_check.php on line 22

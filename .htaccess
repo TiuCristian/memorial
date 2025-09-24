@@ -1,0 +1,9 @@
+# Send everything in /memorial to the public/ folder
+RewriteEngine On
+RewriteBase /memorial/
+
+# If the request is exactly /memorial, go to /memorial/public/
+RewriteRule ^$ public/ [L]
+
+# Otherwise, pass through to /memorial/public/...
+RewriteRule ^(.*)$ public/$1 [L]

@@ -4,7 +4,15 @@
 <style>
 /* === Styles adapted from your example (trimmed a bit for brevity) === */
 *{box-sizing:border-box}
-body{background-color:#f7f9fc;color:#2c3e50}
+body{
+  background-color:#f7f9fc;
+  color:#2c3e50;
+  background-image: url('/memorial/uploads/floral_background.png');
+  background-size: cover;   /* scale to cover */
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+
 .container-mem {max-width: 720px; margin: 0 auto; padding: 30px 16px;}
 .header {text-align:center;margin-bottom:32px}
 .header h1{font-size:32px;color:#1a365d;font-weight:600;margin-bottom:12px;position:relative;display:inline-block}
